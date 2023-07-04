@@ -16,6 +16,13 @@ class EspensesApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatelessWidget {
+  
+  final titleController = TextEditingController();
+  final valueController = TextEditingController();
+   //String title = '';
+   //String value = '';
+   
+
   final _transactions = [
     Transaction(
         identidade: 't1', date: DateTime.now(), value: 300.90, title: 'Tênis'),
@@ -83,17 +90,21 @@ class MyHomePage extends StatelessWidget {
                 );
               }).toList(),
             ),
-            const Padding(
+             Padding(
               padding: EdgeInsets.all(10),
               child: Card(
                   elevation: 5,
                   child: Column(
                     children: [
                       TextField(
-                        decoration: InputDecoration(labelText: 'Titulo'),
+                        controller: titleController,
+                        //onChanged: (newValue)=> title = (newValue),
+                        decoration: const InputDecoration(labelText: 'Titulo'),
                       ),
                       TextField(
-                        decoration: InputDecoration(labelText: 'Valor (R\$)'),
+                        controller: valueController,
+                        //onChanged: (newValue)=> value = (newValue),
+                        decoration: const InputDecoration(labelText: 'Valor (R\$)'),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -102,7 +113,10 @@ class MyHomePage extends StatelessWidget {
                           TextButton(
                             //style: TextButton.styleFrom(foregroundColor: Colors.green)
                             //ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.purple)), 
-                            child: Icon(Icons.add), onPressed: null ),
+                            child: Icon(Icons.add), onPressed: (){
+                              print(titleController.text);
+                              print(valueController.text);
+                              } ),
                         ],
                       )
                       
