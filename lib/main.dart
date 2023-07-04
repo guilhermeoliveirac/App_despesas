@@ -20,7 +20,6 @@ class MyHomePage extends StatelessWidget {
     Transaction(identidade: 't1', data: DateTime.now(), value: 300.90, title: 'TENIS'),
     Transaction(identidade: 't2', data: DateTime.now(), value: 230, title: 'Blusa'),
   ];
-  //const MyHomePage({super.key});
 
  
 
@@ -43,8 +42,12 @@ class MyHomePage extends StatelessWidget {
               elevation: 5,
             ),
           ),
-          Card(child: Text('Lista de transações '),
-          elevation: 5,)
+          Column(children: _transactions.map((tr){
+            return Card(
+              child: Text(tr.title),
+            );
+          }).toList(),
+          )
         ],
       )
     );
