@@ -26,16 +26,16 @@ class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: const Text('Despesas Pessoais'),
-        ),
-        body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+      appBar: AppBar(
+        title: const Text('Despesas Pessoais'),
+      ),
+      body: Column(
+          //mainAxisAlignment: MainAxisAlignment.spaceAround,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Container(
               width: double.infinity,
-              child:const Card(
+              child: const Card(
                 color: Colors.blue,
                 child: Text('Gráfico'),
                 elevation: 5,
@@ -46,14 +46,14 @@ class MyHomePage extends StatelessWidget {
                 return Card(
                   child: Row(children: [
                     Container(
-                      margin:
-                          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
                           border: Border.all(
                         color: Colors.black,
                         width: 2,
                       )),
-                      padding:const  EdgeInsets.all(10),
+                      padding: const EdgeInsets.all(10),
                       child: Text(
                         'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
@@ -69,7 +69,9 @@ class MyHomePage extends StatelessWidget {
                         Text(
                           tr.title,
                           style: const TextStyle(
-                              color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
+                              color: Colors.black,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18),
                         ),
                         Text(
                           DateFormat('d MMM y').format(tr.date),
@@ -80,8 +82,34 @@ class MyHomePage extends StatelessWidget {
                   ]),
                 );
               }).toList(),
+            ),
+            const Padding(
+              padding: EdgeInsets.all(10),
+              child: Card(
+                  elevation: 5,
+                  child: Column(
+                    children: [
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Titulo'),
+                      ),
+                      TextField(
+                        decoration: InputDecoration(labelText: 'Valor (R\$)'),
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          
+                          TextButton(
+                            //style: TextButton.styleFrom(foregroundColor: Colors.green)
+                            //ButtonStyle(backgroundColor: MaterialStatePropertyAll(Colors.purple)), 
+                            child: Icon(Icons.add), onPressed: null ),
+                        ],
+                      )
+                      
+                    ],
+                  )),
             )
-          ],
-        ));
+          ]),
+    );
   }
 }
