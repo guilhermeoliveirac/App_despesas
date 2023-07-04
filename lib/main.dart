@@ -1,5 +1,6 @@
 import 'package:expenses/Model/transaction.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 main() => runApp(EspensesApp());
 
@@ -17,9 +18,9 @@ class EspensesApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   final _transactions = [
     Transaction(
-        identidade: 't1', data: DateTime.now(), value: 300.90, title: 'Tênis'),
+        identidade: 't1', date: DateTime.now(), value: 300.90, title: 'Tênis'),
     Transaction(
-        identidade: 't2', data: DateTime.now(), value: 230, title: 'Blusa'),
+        identidade: 't2', date: DateTime.now(), value: 230, title: 'Blusa'),
   ];
 
   @override
@@ -71,7 +72,7 @@ class MyHomePage extends StatelessWidget {
                               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                         Text(
-                          tr.data.toString(),
+                          DateFormat('d MMM y').format(tr.date),
                           style: const TextStyle(color: Colors.grey),
                         ),
                       ],
