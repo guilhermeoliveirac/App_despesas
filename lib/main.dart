@@ -34,7 +34,7 @@ class MyHomePage extends StatelessWidget {
           children: [
             Container(
               width: double.infinity,
-              child: Card(
+              child:const Card(
                 color: Colors.blue,
                 child: Text('Gráfico'),
                 elevation: 5,
@@ -46,15 +46,15 @@ class MyHomePage extends StatelessWidget {
                   child: Row(children: [
                     Container(
                       margin:
-                          EdgeInsets.symmetric(horizontal: 15, vertical: 10),
+                          const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                       decoration: BoxDecoration(
                           border: Border.all(
                         color: Colors.black,
                         width: 2,
                       )),
-                      padding: EdgeInsets.all(10),
+                      padding:const  EdgeInsets.all(10),
                       child: Text(
-                        tr.value.toString(),
+                        'R\$ ${tr.value.toStringAsFixed(2)}',
                         style: const TextStyle(
                           fontWeight: FontWeight.bold,
                           fontSize: 20,
@@ -67,12 +67,12 @@ class MyHomePage extends StatelessWidget {
                       children: [
                         Text(
                           tr.title,
-                          style: TextStyle(
+                          style: const TextStyle(
                               color: Colors.black, fontWeight: FontWeight.bold, fontSize: 18),
                         ),
                         Text(
                           tr.data.toString(),
-                          style: TextStyle(color: Colors.grey),
+                          style: const TextStyle(color: Colors.grey),
                         ),
                       ],
                     )
