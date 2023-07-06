@@ -25,20 +25,23 @@ class MyHomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Despesas Pessoais'),
       ),
-      body: Column(
-          //mainAxisAlignment: MainAxisAlignment.spaceAround,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            Container(
-              width: double.infinity,
-              child: const Card(
-                color: Colors.blue,
-                child: Text('Gráfico'),
-                elevation: 5,
+      body: SingleChildScrollView(
+        // AQUI CONSEGUIMOS PASSAR ALÉM DA TELA, REMOVENDO O LIMITECon
+        child: Column(
+            //mainAxisAlignment: MainAxisAlignment.spaceAround,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Container(
+                width: double.infinity,
+                child: const Card(
+                  color: Colors.blue,
+                  child: Text('Gráfico'),
+                  elevation: 5,
+                ),
               ),
-            ),
-            TransactionUser(),
-          ]),
+              TransactionUser(),
+            ]),
+      ),
     );
   }
 }
