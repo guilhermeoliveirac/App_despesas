@@ -1,9 +1,8 @@
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
 
 import 'dart:math';
 import '/components/transaction_list.dart';
-import '/components/transaction_form.dart';
+import 'package:expenses/components/transaction_form.dart';
 import 'package:expenses/Models/transaction.dart';
 
 
@@ -46,10 +45,13 @@ final _transactions = [
       value: value,
       title: title,
     );
+
     setState(() {
       _transactions.add(newTransaction);
     });
   }
+
+
   _openTransectionFormModal(BuildContext context){
     showModalBottomSheet(
       context: context,
@@ -83,9 +85,9 @@ final _transactions = [
       ),
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.add),
-        onPressed: ()=> _openTransectionFormModal(context),
+        onPressed: () => _openTransectionFormModal(context),
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
   }
 }
