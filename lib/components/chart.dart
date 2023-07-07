@@ -26,14 +26,14 @@ class Chart extends StatelessWidget {
 
         print(totalSom);
         print(DateFormat.E().format(weekday)[0]);
-        
+
           return {'day:': DateFormat.E().format(weekday)[0],
           'value': totalSom};
       });
     }
   @override
   Widget build(BuildContext context) {
-    
+    groupedTransactions;
     return const Card(
       elevation: 6,
       margin: EdgeInsets.all(20),
