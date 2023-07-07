@@ -10,7 +10,17 @@ class TransactionList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 600,
-      child: ListView.builder(
+      child: 
+      transactions.isEmpty? const Column(
+        mainAxisAlignment:MainAxisAlignment.center,
+        children: [
+          
+          Text(
+            "NENHUM GASTO REGISTRADO CADASTRADA",
+          ),
+        ],
+      ):
+      ListView.builder(
         itemCount: transactions.length,
         itemBuilder: (cxt, index){
     final tr = transactions[index];
@@ -20,7 +30,7 @@ class TransactionList extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
                     border: Border.all(
-                  color: Colors.black,
+                  color: Color.fromARGB(205, 161, 185, 185),
                   width: 2,
                 )),
                 padding: const EdgeInsets.all(10),
@@ -29,7 +39,7 @@ class TransactionList extends StatelessWidget {
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
-                    color: Colors.purple,
+                    color: Color.fromARGB(255, 116, 92, 212),
                   ),
                 ),
               ),
@@ -45,7 +55,7 @@ class TransactionList extends StatelessWidget {
                   ),
                   Text(
                     DateFormat('d MMM y').format(tr.date),
-                    style: const TextStyle(color: Colors.grey),
+                    style: const TextStyle(color: Color.fromARGB(255, 110, 110, 110)),
                   ),
                 ],
               )
