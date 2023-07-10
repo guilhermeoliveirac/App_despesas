@@ -5,7 +5,7 @@ import 'package:intl/intl.dart';
 class TransactionList extends StatelessWidget {
   final List<Transaction> transactions;
  
-  TransactionList(this.transactions, {Key? key}):super(key: key);
+  const TransactionList(this.transactions, {Key? key}):super(key: key);
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,7 +30,7 @@ class TransactionList extends StatelessWidget {
                 margin: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 decoration: BoxDecoration(
                     border: Border.all(
-                  color: Color.fromARGB(205, 161, 185, 185),
+                  color: const Color.fromARGB(205, 161, 185, 185),
                   width: 2,
                 )),
                 padding: const EdgeInsets.all(10),

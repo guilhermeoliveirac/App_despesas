@@ -31,7 +31,7 @@ class _TransactionFormState extends State<TransactionForm> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.all(10),
+      padding:const EdgeInsets.all(10),
       child: Card(
           elevation: 5,
           child: Column(
@@ -52,7 +52,7 @@ class _TransactionFormState extends State<TransactionForm> {
               mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
                 TextButton(
-                  child: const Text(
+                   child: Text(
                     'Nova Transação',
                     style: TextStyle(
                       //color: Colors.purple,

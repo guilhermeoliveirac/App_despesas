@@ -6,7 +6,7 @@ import '/components/transaction_list.dart';
 import 'package:expenses/components/transaction_form.dart';
 import 'package:expenses/Models/transaction.dart';
 
-main() => runApp(EspensesApp());
+main() => runApp(const EspensesApp());
 
 class EspensesApp extends StatelessWidget {
   const EspensesApp({super.key});
@@ -20,7 +20,7 @@ class EspensesApp extends StatelessWidget {
             fontFamily: 'cinzel-semiBold',
             useMaterial3: true,
             colorScheme: ColorScheme.fromSeed(
-              seedColor: Color.fromARGB(205, 201, 233, 233),
+              seedColor:const  Color.fromARGB(205, 201, 233, 233),
 
               //brightness: Brightness.dark,
             )));
@@ -36,13 +36,13 @@ class _MyHomePageState extends State<MyHomePage> {
   final List<Transaction> _transactions = [
     Transaction(
       identidade: 't0',
-      date: DateTime.now().subtract(Duration(days: 33)),
+      date: DateTime.timestamp(2),
       value: 300.90,
       title: 'Tênis',
     ),
     Transaction(
       identidade: 't1',
-      date: DateTime.now().subtract(Duration(days: 4)),
+      date: DateTime.now(),
       value: 230,
       title: 'Blusa',
     ),
@@ -50,7 +50,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Transaction> get _recentTransactions {
     return _transactions.where((tr) {
-      return tr.date.isAfter(DateTime.now().subtract(Duration(days: 7),
+      return tr.date.isAfter(DateTime.now().subtract(const Duration(days: 7),
       ));
     }).toList();
   }
@@ -99,7 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
             ]),
       ),
       floatingActionButton: FloatingActionButton(
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
         onPressed: () => _openTransectionFormModal(context),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
